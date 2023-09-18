@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  neonlink:
+    container_name: neonlink
+    image: alexscifier/neonlink:latest
+    volumes:
+      - /data/neonlink/data:/app/data:rw
+      - /data/neonlink/media:/app/public/static/media/background:rw
+    ports:
+      - 3333:3333
+    restart: unless-stopped
